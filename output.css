@@ -34,6 +34,8 @@
     --text-4xl--line-height: calc(2.5 / 2.25);
     --text-5xl: 3rem;
     --text-5xl--line-height: 1;
+    --text-7xl: 4.5rem;
+    --text-7xl--line-height: 1;
     --font-weight-normal: 400;
     --font-weight-medium: 500;
     --tracking-normal: 0em;
@@ -839,6 +841,11 @@
       order: 2;
     }
   }
+  .lg\:ms-0 {
+    @media (width >= 64rem) {
+      margin-inline-start: calc(var(--spacing) * 0);
+    }
+  }
   .lg\:ms-32 {
     @media (width >= 64rem) {
       margin-inline-start: calc(var(--spacing) * 32);
@@ -872,6 +879,11 @@
   .lg\:ms-\[30rem\] {
     @media (width >= 64rem) {
       margin-inline-start: 30rem;
+    }
+  }
+  .lg\:me-0 {
+    @media (width >= 64rem) {
+      margin-inline-end: calc(var(--spacing) * 0);
     }
   }
   .lg\:me-10 {
@@ -1004,6 +1016,11 @@
       width: calc(var(--spacing) * 96);
     }
   }
+  .lg\:w-\[0\%\] {
+    @media (width >= 64rem) {
+      width: 0%;
+    }
+  }
   .lg\:w-\[30\%\] {
     @media (width >= 64rem) {
       width: 30%;
@@ -1017,6 +1034,11 @@
   .lg\:w-\[50\%\] {
     @media (width >= 64rem) {
       width: 50%;
+    }
+  }
+  .lg\:w-\[60\%\] {
+    @media (width >= 64rem) {
+      width: 60%;
     }
   }
   .lg\:w-\[70\%\] {
@@ -1243,6 +1265,12 @@
     @media (width >= 64rem) {
       font-size: var(--text-5xl);
       line-height: var(--tw-leading, var(--text-5xl--line-height));
+    }
+  }
+  .lg\:text-7xl {
+    @media (width >= 64rem) {
+      font-size: var(--text-7xl);
+      line-height: var(--tw-leading, var(--text-7xl--line-height));
     }
   }
   .lg\:tracking-\[0\.4rem\] {
