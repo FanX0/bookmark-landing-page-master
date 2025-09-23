@@ -135,6 +135,7 @@
                   class="h-12 flex items-center justify-center relative"
                 >
                   <button
+                    type="button"
                     role="tab"
                     id="tab-1"
                     aria-selected="true"
@@ -395,43 +396,39 @@
                 id="ask-btn-1"
                 aria-expanded="false"
                 aria-controls="ask-1"
-                class="flex justify-between items-center w-full"
+                class="flex justify-between items-center w-full text-blue-950 font-medium text-md"
               >
-                <h3 class="text-blue-950 font-medium text-md">
-                  What is Bookmark?
-                </h3>
+                What is Bookmark?
+
                 <div>
                   <img src="./images/icon-arrow.svg" alt="arrow" />
                 </div>
               </button>
-              <p
+              <section
                 id="ask-1"
-                role="region"
                 aria-labelledby="ask-btn-1"
                 class="hidden text-blue-950 text-sm font-normal"
               >
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce
                 tincidunt justo eget ultricies fringilla. Phasellus blandit
                 ipsum quis quam ornare mattis.
-              </p>
+              </section>
             </li>
             <li class="flex flex-col gap-4 py-4 border-b-1 border-gray-200">
               <button
                 id="ask-btn-2"
                 aria-expanded="false"
                 aria-controls="ask-2"
-                class="flex justify-between items-center w-full"
+                class="flex justify-between items-center w-fulltext-blue-950 font-medium text-md"
               >
-                <h3 class="text-blue-950 font-medium text-md">
-                  How can I request a new browser?
-                </h3>
+                How can I request a new browser?
+
                 <div>
                   <img src="./images/icon-arrow.svg" alt="arrow" />
                 </div>
               </button>
-              <p
+              <section
                 id="ask-2"
-                role="region"
                 aria-labelledby="ask-btn-2"
                 class="hidden text-blue-950 text-sm font-normal"
               >
@@ -441,25 +438,23 @@
                 ultricies non ligula. Suspendisse imperdie tVivamus luctus eros
                 aliquet convallis ultricies. Mauris augue massa, ultricies non
                 ligula. Suspendisse imperdiet.
-              </p>
+              </section>
             </li>
             <li class="flex flex-col gap-4 py-4 border-b-1 border-gray-200">
               <button
                 id="ask-btn-3"
                 aria-expanded="false"
                 aria-controls="ask-3"
-                class="flex justify-between items-center w-full"
+                class="flex justify-between items-center w-full text-blue-950 font-medium text-md"
               >
-                <h3 class="text-blue-950 font-medium text-md">
-                  Is there a mobile app?
-                </h3>
+                Is there a mobile app?
+
                 <div>
                   <img src="./images/icon-arrow.svg" alt="arrow" />
                 </div>
               </button>
-              <p
+              <section
                 id="ask-3"
-                role="region"
                 aria-labelledby="ask-btn-3"
                 class="hidden text-blue-950 text-sm font-normal"
               >
@@ -467,25 +462,23 @@
                 luctus vestibulum dolor, ut condimentum urna vulputate eget.
                 Cras in ligula quis est pharetra mattis sit amet pharetra purus.
                 Sed sollicitudin ex et ultricies bibendum.
-              </p>
+              </section>
             </li>
             <li class="flex flex-col gap-4 py-4 border-b-1 border-gray-200">
               <button
                 id="ask-btn-4"
                 aria-expanded="false"
                 aria-controls="ask-4"
-                class="flex justify-between items-center w-full"
+                class="flex justify-between items-center w-full text-blue-950 font-medium text-md"
               >
-                <h3 class="text-blue-950 font-medium text-md">
-                  What about other Chromium browsers?
-                </h3>
+                What about other Chromium browsers?
+
                 <div>
                   <img src="./images/icon-arrow.svg" alt="arrow" />
                 </div>
               </button>
-              <p
+              <section
                 id="ask-4"
-                role="region"
                 aria-labelledby="ask-btn-4"
                 class="hidden text-blue-950 text-sm font-normal"
               >
@@ -494,7 +487,7 @@
                 gravida pellentesque non ut velit. More Info 35,000+ already
                 joined Stay up-to-date with what we’re doing Contact Us Features
                 Pricing Contact
-              </p>
+              </section>
             </li>
           </ul>
           <div class="flex justify-center items-center">
@@ -516,13 +509,13 @@
             </h2>
 
             <form action="#" class="flex flex-col gap-4">
-              <fieldset class="justify-center">
+              <fieldset>
+                <legend
+                  class="text-center text-2xl text-white font-medium lg:text-4xl pb-8"
+                >
+                  Stay up-to-date with what we’re doing
+                </legend>
                 <div class="flex flex-col gap-8 lg:justify-center">
-                  <legend
-                    class="text-center text-2xl text-white font-medium lg:text-4xl"
-                  >
-                    Stay up-to-date with what we’re doing
-                  </legend>
                   <div class="flex flex-col gap-4 lg:flex-row">
                     <input
                       class="text-left ps-8 bg-white rounded-md h-12 lg:w-[70%]"
