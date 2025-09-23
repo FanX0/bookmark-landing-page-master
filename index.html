@@ -11,66 +11,527 @@
       sizes="32x32"
       href="./images/favicon-32x32.png"
     />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap"
+      rel="stylesheet"
+    />
+
     <link rel="stylesheet" href="output.css" />
+    <script src="index.js" defer></script>
 
     <title>Frontend Mentor | Bookmark landing page</title>
 
     <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
   </head>
-  <body>
-    Features Pricing Contact Login A Simple Bookmark Manager A clean and simple
-    interface to organize your favourite websites. Open a new browser tab and
-    see your sites load instantly. Try it for free. Get it on Chrome Get it on
-    Firefox Features Our aim is to make it quick and easy for you to access your
-    favourite websites. Your bookmarks sync between your devices so you can
-    access them on the go. Simple Bookmarking Speedy Searching Easy Sharing
-    Bookmark in one click Organize your bookmarks however you like. Our simple
-    drag-and-drop interface gives you complete control over how you manage your
-    favourite sites. More Info Intelligent search Our powerful search feature
-    will help you find saved sites in no time at all. No need to trawl through
-    all of your bookmarks. More Info Share your bookmarks Easily share your
-    bookmarks and collections with others. Create a shareable link that you can
-    send at the click of a button. More Info Download the extension We’ve got
-    more browsers in the pipeline. Please do let us know if you’ve got a
-    favourite you’d like us to prioritize. Add to Chrome Minimum version 62 Add
-    & Install Extension Add to Firefox Minimum version 55 Add & Install
-    Extension Add to Opera Minimum version 46 Add & Install Extension Frequently
-    Asked Questions Here are some of our FAQs. If you have any other questions
-    you’d like answered please feel free to email us.
+  <body class="flex flex-col font-rubik">
+    <header
+      class="flex flex-row items-center justify-between mb-20 h-14 lg:h-36"
+    >
+      <a class="ms-8 lg:ms-32" href="#"
+        ><img src="./images/logo-bookmark.svg" alt="logo"
+      /></a>
+      <button
+        class="me-8 lg:hidden"
+        type="button"
+        id="nav-btn"
+        aria-controls="nav-menu"
+        aria-expanded="false"
+      >
+        <img
+          id="nav-btn-img"
+          src="./images/icon-hamburger.svg"
+          alt="nav-menu"
+        />
+      </button>
 
-    <!-- Question 1 -->
-    What is Bookmark?
+      <nav
+        id="nav-menu"
+        class="hidden absolute z-2 top-14 tracking-widest bg-white w-full lg:block lg:static lg:w-auto lg:me-32"
+      >
+        <ul
+          class="divide-y-1 lg:flex lg:gap-12 text-blue-950 lg:items-center lg:divide-none"
+        >
+          <li class="ps-8 h-12 flex items-center lg:ps-0">
+            <a href="#">Features</a>
+          </li>
+          <li class="ps-8 h-12 flex items-center lg:ps-0 0">
+            <a href="#">Pricing</a>
+          </li>
+          <li class="ps-8 h-12 flex items-center lg:ps-0">
+            <a href="#">Contact</a>
+          </li>
+          <li
+            class="ps-8 h-12 flex items-center lg:justify-center lg:w-28 lg:rounded-lg lg:ps-0 lg:h-9 lg:text-white lg:bg-red-400"
+          >
+            <a href="#">Login</a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+    <main>
+      <article class="flex flex-col gap-32">
+        <header class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+          <div class="relative lg:order-2">
+            <div class="lg:me-10">
+              <img
+                class="relative z-1 w-full"
+                src="./images/illustration-hero.svg"
+                alt="hero"
+              />
+            </div>
+            <div
+              class="absolute mx-0 z-0 bottom-0 right-0 w-[80%] h-[75%] bg-blue-600 rounded-l-full"
+            ></div>
+          </div>
+          <div
+            class="flex flex-col lg:order-1 mx-6 gap-8 lg:self-center lg:ms-32"
+          >
+            <div class="mx-2 flex flex-col justify-center gap-8 text-center">
+              <h1 class="text-3xl font-medium">A Simple Bookmark Manager</h1>
+              <p class="text-blue-950 font-medium">
+                A clean and simple interface to organize your favourite
+                websites. Open a new browser tab and see your sites load
+                instantly. Try it for free.
+              </p>
+            </div>
+            <div class="grid grid-cols-2 gap-4 font-medium">
+              <a
+                class="bg-blue-600 text-white shadow-lg rounded-lg h-12 flex justify-center items-center"
+                href="#"
+                >Get it on Chrome</a
+              ><a
+                class="bg-grey-50 text-blue-950 shadow-lg rounded-lg h-12 flex justify-center items-center"
+                href="#"
+                >Get it on Firefox</a
+              >
+            </div>
+          </div>
+        </header>
+        <section aria-label="Features" class="flex flex-col gap-8">
+          <div class="flex flex-col gap-4 text-center ms-8 me-8">
+            <h2 class="text-3xl font-medium text-blue-950">Features</h2>
+            <p class="font-normal text-blue-950 text-sm">
+              Our aim is to make it quick and easy for you to access your
+              favourite websites. Your bookmarks sync between your devices so
+              you can access them on the go.
+            </p>
+          </div>
+          <div class="flex flex-col gap-12">
+            <div
+              class="flex justify-center lg:border-b-1 lg:border-gray-300 lg:ms-[25rem] lg:me-[25rem]"
+            >
+              <ul
+                role="tablist"
+                id="tabs-list"
+                class="grid grid-cols-1 border-t-1 border-b-1 divide-y-1 border-gray-300 divide-gray-300 ms-8 me-8 lg:grid-cols-3 lg:divide-none lg:w-[50%] lg:border-none lg:border-gray-300 lg:w-full"
+              >
+                <li class="h-12 flex items-center justify-center relative">
+                  <button
+                    role="tab"
+                    id="tab-1"
+                    aria-selected="true"
+                    aria-controls="panel-1"
+                    class=""
+                  >
+                    Simple Bookmarking
+                  </button>
+                </li>
+                <li class="h-12 flex items-center justify-center relative">
+                  <button
+                    role="tab"
+                    id="tab-2"
+                    aria-selected="false"
+                    aria-controls="panel-2"
+                    tabindex="-1"
+                  >
+                    Speedy Searching
+                  </button>
+                </li>
+                <li class="h-12 flex items-center justify-center relative">
+                  <button
+                    role="tab"
+                    id="tab-3"
+                    aria-selected="false"
+                    aria-controls="panel-3"
+                    tabindex="-1"
+                  >
+                    Easy Sharing
+                  </button>
+                </li>
+              </ul>
+            </div>
+            <div
+              role="tabpanel"
+              id="panel-1"
+              aria-labelledby="tab-1"
+              class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16"
+            >
+              <div class="relative h-96">
+                <div class="ms-8 me-8 pb-12 lg:pb-16 lg:ms-32">
+                  <img
+                    class="relative z-1 w-full bg-top-right object-contain"
+                    src="./images/illustration-features-tab-1.svg"
+                    alt="simple-bookmarking"
+                  />
+                </div>
+                <div
+                  class="absolute mx-0 z-0 bottom-0 left-0 w-[80%] h-[85%] bg-blue-600 rounded-r-full"
+                ></div>
+              </div>
+              <div class="flex flex-col self-center gap-8 text-center lg:me-32">
+                <h2 class="text-2xl text-blue-950 font-medium lg:text-left">
+                  Bookmark in one click
+                </h2>
+                <p class="ms-8 me-8 text-blue-950 lg:text-left">
+                  Organize your bookmarks however you like. Our simple
+                  drag-and-drop interface gives you complete control over how
+                  you manage your favourite sites.
+                </p>
+                <a
+                  class="hidden lg:flex justify-center items-center w-32 text-white font-normal bg-blue-600 h-12"
+                  href="#"
+                  >More Info</a
+                >
+              </div>
+            </div>
+            <div
+              role="tabpanel"
+              id="panel-2"
+              aria-labelledby="tab-2"
+              hidden
+              class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16"
+            >
+              <div class="relative h-96">
+                <div class="ms-8 me-8 pb-12 lg:pb-16 lg:ms-32">
+                  <img
+                    class="relative z-1 w-full bg-top-right object-contain"
+                    src="./images/illustration-features-tab-2.svg"
+                    alt="simple-bookmarking"
+                  />
+                </div>
+                <div
+                  class="absolute mx-0 z-0 bottom-0 left-0 w-[80%] h-[85%] bg-blue-600 rounded-r-full"
+                ></div>
+              </div>
+              <div class="flex flex-col self-center gap-8 text-center lg:me-32">
+                <h2 class="text-2xl text-blue-950 font-medium lg:text-left">
+                  Intelligent search
+                </h2>
+                <p class="ms-8 me-8 text-blue-950 lg:text-left">
+                  Our powerful search feature will help you find saved sites in
+                  no time at all. No need to trawl through all of your
+                  bookmarks.
+                </p>
+                <a
+                  class="hidden lg:flex justify-center items-center w-32 text-white font-normal bg-blue-600 h-12"
+                  href="#"
+                  >More Info</a
+                >
+              </div>
+            </div>
+            <div
+              role="tabpanel"
+              id="panel-3"
+              aria-labelledby="tab-3"
+              hidden
+              class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16"
+            >
+              <div class="relative h-96">
+                <div class="ms-8 me-8 pb-12 lg:pb-16 lg:ms-32">
+                  <img
+                    class="relative z-1 w-full bg-top-right object-contain"
+                    src="./images/illustration-features-tab-3.svg"
+                    alt="simple-bookmarking"
+                  />
+                </div>
+                <div
+                  class="absolute mx-0 z-0 bottom-0 left-0 w-[80%] h-[85%] bg-blue-600 rounded-r-full"
+                ></div>
+              </div>
+              <div class="flex flex-col self-center gap-8 text-center lg:me-32">
+                <h2 class="text-2xl text-blue-950 font-medium lg:text-left">
+                  Share your bookmarks
+                </h2>
+                <p class="ms-8 me-8 text-blue-950 lg:text-left">
+                  Easily share your bookmarks and collections with others.
+                  Create a shareable link that you can send at the click of a
+                  button.
+                </p>
+                <a
+                  class="hidden lg:flex justify-center items-center w-32 text-white font-normal bg-blue-600 h-12"
+                  href="#"
+                  >More Info</a
+                >
+              </div>
+            </div>
+          </div>
+        </section>
+        <section
+          aria-label="extension"
+          class="flex gap-12 flex-col ms-8 me-8 lg:ms-80 lg:me-80"
+        >
+          <div class="flex flex-col gap-4 justify-center text-center">
+            <h2 class="text-2xl font-medium">Download the extension</h2>
+            <p class="lg:ps-32 lg:pe-32">
+              We’ve got more browsers in the pipeline. Please do let us know if
+              you’ve got a favourite you’d like us to prioritize.
+            </p>
+          </div>
+          <ul class="grid gap-8 text-center lg:grid-cols-3 lg:h-96">
+            <li
+              class="flex flex-col shadow-xl rounded-lg pt-6 pb-6 divide-dotted divide-y-5 divide-gray-300 lg:h-[85%] lg:self-start"
+            >
+              <div class="flex flex-col gap-4 pb-6">
+                <div class="flex justify-center">
+                  <img src="./images/logo-chrome.svg" alt="chrome" />
+                </div>
+                <div class="flex flex-col gap-1">
+                  <h3 class="text-2xl font-medium">Add to Chrome</h3>
+                  <p class="text-blue-950">Minimum version 62</p>
+                </div>
+              </div>
+              <div class="pt-6 mx-6">
+                <a
+                  class="flex bg-blue-600 w-full justify-center items-center h-12 rounded-lg text-white"
+                  href="#"
+                  >Add & Install Extension</a
+                >
+              </div>
+            </li>
+            <li
+              class="flex flex-col shadow-xl rounded-lg pt-6 pb-6 divide-dotted divide-y-5 divide-gray-300 lg:h-[85%] lg:self-center"
+            >
+              <div class="flex flex-col gap-4 pb-6">
+                <div class="flex justify-center">
+                  <img src="./images/logo-firefox.svg" alt="firefox" />
+                </div>
+                <div class="flex flex-col gap-1">
+                  <h3 class="text-2xl font-medium">Add to Firefox</h3>
+                  <p class="text-blue-950">Minimum version 55</p>
+                </div>
+              </div>
+              <div class="pt-6 mx-6">
+                <a
+                  class="flex bg-blue-600 w-full justify-center items-center h-12 rounded-lg text-white"
+                  href="#"
+                  >Add & Install Extension</a
+                >
+              </div>
+            </li>
+            <li
+              class="flex flex-col shadow-xl rounded-lg pt-6 pb-6 divide-dotted divide-y-5 divide-gray-300 lg:h-[85%] lg:self-end"
+            >
+              <div class="flex flex-col gap-4 pb-6">
+                <div class="flex justify-center">
+                  <img src="./images/logo-opera.svg" alt="opera" />
+                </div>
+                <div class="flex flex-col gap-1">
+                  <h3 class="text-2xl font-medium">Add to Opera</h3>
+                  <p class="text-blue-950">Minimum version 46</p>
+                </div>
+              </div>
+              <div class="pt-6 mx-6">
+                <a
+                  class="flex bg-blue-600 w-full justify-center items-center h-12 rounded-lg text-white"
+                  href="#"
+                  >Add & Install Extension</a
+                >
+              </div>
+            </li>
+          </ul>
+        </section>
+        <section
+          aria-label="questions"
+          class="flex flex-col gap-8 ms-6 me-6 lg:ms-[30rem] lg:me-[30rem]"
+        >
+          <div class="flex flex-col gap-4 text-center">
+            <h2 class="text-blue-950 font-medium text-3xl">
+              Frequently Asked Questions
+            </h2>
+            <p class="text-blue-950 font-normal">
+              Here are some of our FAQs. If you have any other questions you’d
+              like answered please feel free to email us.
+            </p>
+          </div>
+          <ul id="list-ask">
+            <li class="flex flex-col gap-4 py-4 border-b-1 border-gray-200">
+              <button
+                id="ask-btn-1"
+                aria-expanded="false"
+                aria-controls="ask-1"
+                class="flex justify-between items-center w-full"
+              >
+                <h3 class="text-blue-950 font-medium text-md">
+                  What is Bookmark?
+                </h3>
+                <div>
+                  <img src="./images/icon-arrow.svg" alt="arrow" />
+                </div>
+              </button>
+              <p
+                id="ask-1"
+                role="region"
+                aria-labelledby="ask-btn-1"
+                class="hidden text-blue-950 text-sm font-normal"
+              >
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce
+                tincidunt justo eget ultricies fringilla. Phasellus blandit
+                ipsum quis quam ornare mattis.
+              </p>
+            </li>
+            <li class="flex flex-col gap-4 py-4 border-b-1 border-gray-200">
+              <button
+                id="ask-btn-2"
+                aria-expanded="false"
+                aria-controls="ask-2"
+                class="flex justify-between items-center w-full"
+              >
+                <h3 class="text-blue-950 font-medium text-md">
+                  How can I request a new browser?
+                </h3>
+                <div>
+                  <img src="./images/icon-arrow.svg" alt="arrow" />
+                </div>
+              </button>
+              <p
+                id="ask-2"
+                role="region"
+                aria-labelledby="ask-btn-2"
+                class="hidden text-blue-950 text-sm font-normal"
+              >
+                Vivamus luctus eros aliquet convallis ultricies. Mauris augue
+                massa, ultricies non ligula. Suspendisse imperdiet. Vivamus
+                luctus eros aliquet convallis ultricies. Mauris augue massa,
+                ultricies non ligula. Suspendisse imperdie tVivamus luctus eros
+                aliquet convallis ultricies. Mauris augue massa, ultricies non
+                ligula. Suspendisse imperdiet.
+              </p>
+            </li>
+            <li class="flex flex-col gap-4 py-4 border-b-1 border-gray-200">
+              <button
+                id="ask-btn-3"
+                aria-expanded="false"
+                aria-controls="ask-3"
+                class="flex justify-between items-center w-full"
+              >
+                <h3 class="text-blue-950 font-medium text-md">
+                  Is there a mobile app?
+                </h3>
+                <div>
+                  <img src="./images/icon-arrow.svg" alt="arrow" />
+                </div>
+              </button>
+              <p
+                id="ask-3"
+                role="region"
+                aria-labelledby="ask-btn-3"
+                class="hidden text-blue-950 text-sm font-normal"
+              >
+                Sed consectetur quam id neque fermentum accumsan. Praesent
+                luctus vestibulum dolor, ut condimentum urna vulputate eget.
+                Cras in ligula quis est pharetra mattis sit amet pharetra purus.
+                Sed sollicitudin ex et ultricies bibendum.
+              </p>
+            </li>
+            <li class="flex flex-col gap-4 py-4 border-b-1 border-gray-200">
+              <button
+                id="ask-btn-4"
+                aria-expanded="false"
+                aria-controls="ask-4"
+                class="flex justify-between items-center w-full"
+              >
+                <h3 class="text-blue-950 font-medium text-md">
+                  What about other Chromium browsers?
+                </h3>
+                <div>
+                  <img src="./images/icon-arrow.svg" alt="arrow" />
+                </div>
+              </button>
+              <p
+                id="ask-4"
+                role="region"
+                aria-labelledby="ask-btn-4"
+                class="hidden text-blue-950 text-sm font-normal"
+              >
+                Integer condimentum ipsum id imperdiet finibus. Vivamus in
+                placerat mi, at euismod dui. Aliquam vitae neque eget nisl
+                gravida pellentesque non ut velit. More Info 35,000+ already
+                joined Stay up-to-date with what we’re doing Contact Us Features
+                Pricing Contact
+              </p>
+            </li>
+          </ul>
+          <div class="flex justify-center items-center">
+            <a
+              class="bg-blue-600 px-6 py-3 text-white font-medium rounded-lg"
+              href="#"
+              >More Info</a
+            >
+          </div>
+        </section>
+        <section aria-label="form-email" class="bg-blue-600 pt-16 pb-16">
+          <div
+            class="flex flex-col gap-4 ms-8 me-8 lg:ms-[30rem] lg:me-[30rem]"
+          >
+            <h2
+              class="text-center text-white font-medium text-md tracking-[0.2rem] lg:tracking-[0.4rem]"
+            >
+              35,000+ already joined
+            </h2>
 
-    <!-- Answer 1 -->
-    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce tincidunt
-    justo eget ultricies fringilla. Phasellus blandit ipsum quis quam ornare
-    mattis.
-
-    <!-- Question 2 -->
-    How can I request a new browser?
-
-    <!-- Answer 2 -->
-    Vivamus luctus eros aliquet convallis ultricies. Mauris augue massa,
-    ultricies non ligula. Suspendisse imperdiet. Vivamus luctus eros aliquet
-    convallis ultricies. Mauris augue massa, ultricies non ligula. Suspendisse
-    imperdie tVivamus luctus eros aliquet convallis ultricies. Mauris augue
-    massa, ultricies non ligula. Suspendisse imperdiet.
-
-    <!-- Question 3 -->
-    Is there a mobile app?
-
-    <!-- Answer 3 -->
-    Sed consectetur quam id neque fermentum accumsan. Praesent luctus vestibulum
-    dolor, ut condimentum urna vulputate eget. Cras in ligula quis est pharetra
-    mattis sit amet pharetra purus. Sed sollicitudin ex et ultricies bibendum.
-
-    <!-- Question 4 -->
-    What about other Chromium browsers?
-
-    <!-- Answer 4 -->
-    Integer condimentum ipsum id imperdiet finibus. Vivamus in placerat mi, at
-    euismod dui. Aliquam vitae neque eget nisl gravida pellentesque non ut
-    velit. More Info 35,000+ already joined Stay up-to-date with what we’re
-    doing Contact Us Features Pricing Contact
+            <form action="#" class="flex flex-col gap-4">
+              <fieldset class="justify-center">
+                <div class="flex flex-col gap-8 lg:justify-center">
+                  <legend
+                    class="text-center text-2xl text-white font-medium lg:text-4xl"
+                  >
+                    Stay up-to-date with what we’re doing
+                  </legend>
+                  <div class="flex flex-col gap-4 lg:flex-row">
+                    <input
+                      class="text-left ps-8 bg-white rounded-md h-12 lg:w-[70%]"
+                      id="email"
+                      name="email"
+                      type="email"
+                      autocomplete="email"
+                      placeholder="Enter your email address"
+                      required
+                    /><button
+                      class="bg-red-400 h-12 rounded text-white lg:w-[30%]"
+                    >
+                      Contact Us
+                    </button>
+                  </div>
+                </div>
+              </fieldset>
+            </form>
+          </div>
+        </section>
+      </article>
+    </main>
+    <footer
+      class="flex flex-col gap-8 bg-blue-950 pt-8 pb-8 lg:ps-32 lg:pe-32 lg:flex-row justify-between"
+    >
+      <div class="flex flex-col gap-8 lg:flex-row">
+        <div class="flex justify-center">
+          <img src="./images/logo-bookmark-white.svg" class="" alt="logo" />
+        </div>
+        <div class="flex flex-col gap-4">
+          <ul
+            class="flex flex-col gap-4 text-white font-medium text-center lg:flex-row lg:gap-12"
+          >
+            <li>Features</li>
+            <li>Pricing</li>
+            <li>Contact</li>
+          </ul>
+        </div>
+      </div>
+      <div>
+        <ul class="flex justify-center gap-8 lg:gap-12 items-center">
+          <li><img src="./images/icon-facebook.svg" alt="facebook" /></li>
+          <li><img src="./images/icon-twitter.svg" alt="twitter" /></li>
+        </ul>
+      </div>
+    </footer>
   </body>
 </html>
