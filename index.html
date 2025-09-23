@@ -118,62 +118,92 @@
               you can access them on the go.
             </p>
           </div>
+
           <div class="flex flex-col gap-12">
             <div
               class="flex justify-center lg:border-b-1 lg:border-gray-300 lg:ms-[25rem] lg:me-[25rem]"
             >
               <ul
                 role="tablist"
+                aria-orientation="horizontal"
+                aria-label="Feature tabs"
                 id="tabs-list"
-                class="grid grid-cols-1 border-t-1 border-b-1 divide-y-1 border-gray-300 divide-gray-300 ms-8 me-8 lg:grid-cols-3 lg:divide-none lg:w-[50%] lg:border-none lg:border-gray-300 lg:w-full"
+                class="grid grid-cols-1 border-t-1 border-b-1 divide-y-1 border-gray-300 divide-gray-300 ms-8 me-8 lg:grid-cols-3 lg:divide-none lg:w-full lg:border-none"
               >
-                <li class="h-12 flex items-center justify-center relative">
+                <li
+                  role="presentation"
+                  class="h-12 flex items-center justify-center relative"
+                >
                   <button
                     role="tab"
                     id="tab-1"
                     aria-selected="true"
                     aria-controls="panel-1"
-                    class=""
+                    tabindex="0"
+                    class="flex flex-col items-center py-3 text-blue-950 focus:outline-none"
                   >
                     Simple Bookmarking
+                    <span
+                      aria-hidden="true"
+                      class="pointer-events-none block h-[3px] w-36 absolute bottom-0 bg-red-400 mx-auto opacity-100 transition-opacity duration-200"
+                    ></span>
                   </button>
                 </li>
-                <li class="h-12 flex items-center justify-center relative">
+                <li
+                  role="presentation"
+                  class="h-12 flex items-center justify-center relative"
+                >
                   <button
                     role="tab"
                     id="tab-2"
                     aria-selected="false"
                     aria-controls="panel-2"
                     tabindex="-1"
+                    class="flex flex-col items-center py-3 text-blue-950 focus:outline-none"
                   >
                     Speedy Searching
+                    <span
+                      aria-hidden="true"
+                      class="pointer-events-none block h-[3px] w-36 absolute bottom-0 bg-red-400 mx-auto opacity-0 transition-opacity duration-200"
+                    ></span>
                   </button>
                 </li>
-                <li class="h-12 flex items-center justify-center relative">
+                <li
+                  role="presentation"
+                  class="h-12 flex items-center justify-center relative"
+                >
                   <button
                     role="tab"
                     id="tab-3"
                     aria-selected="false"
                     aria-controls="panel-3"
                     tabindex="-1"
+                    class="flex flex-col items-center py-3 text-blue-950 focus:outline-none"
                   >
                     Easy Sharing
+                    <span
+                      aria-hidden="true"
+                      class="pointer-events-none block h-[3px] w-36 absolute bottom-0 bg-red-400 mx-auto opacity-0 transition-opacity duration-200"
+                    ></span>
                   </button>
                 </li>
               </ul>
             </div>
-            <div
+
+            <!-- Panels -->
+            <section
               role="tabpanel"
               id="panel-1"
               aria-labelledby="tab-1"
+              tabindex="0"
               class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16"
             >
               <div class="relative h-96">
                 <div class="ms-8 me-8 pb-12 lg:pb-16 lg:ms-32">
                   <img
-                    class="relative z-1 w-full bg-top-right object-contain"
+                    class="relative z-10 w-full object-contain"
                     src="./images/illustration-features-tab-1.svg"
-                    alt="simple-bookmarking"
+                    alt="Simple bookmarking illustration"
                   />
                 </div>
                 <div
@@ -181,9 +211,9 @@
                 ></div>
               </div>
               <div class="flex flex-col self-center gap-8 text-center lg:me-32">
-                <h2 class="text-2xl text-blue-950 font-medium lg:text-left">
+                <h3 class="text-2xl text-blue-950 font-medium lg:text-left">
                   Bookmark in one click
-                </h2>
+                </h3>
                 <p class="ms-8 me-8 text-blue-950 lg:text-left lg:ms-0 lg:me-0">
                   Organize your bookmarks however you like. Our simple
                   drag-and-drop interface gives you complete control over how
@@ -195,20 +225,22 @@
                   >More Info</a
                 >
               </div>
-            </div>
-            <div
+            </section>
+
+            <section
               role="tabpanel"
               id="panel-2"
               aria-labelledby="tab-2"
               hidden
+              tabindex="0"
               class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16"
             >
               <div class="relative h-96">
                 <div class="ms-8 me-8 pb-12 lg:pb-16 lg:ms-32">
                   <img
-                    class="relative z-1 w-full bg-top-right object-contain"
+                    class="relative z-10 w-full object-contain"
                     src="./images/illustration-features-tab-2.svg"
-                    alt="simple-bookmarking"
+                    alt="Speedy searching illustration"
                   />
                 </div>
                 <div
@@ -216,9 +248,9 @@
                 ></div>
               </div>
               <div class="flex flex-col self-center gap-8 text-center lg:me-32">
-                <h2 class="text-2xl text-blue-950 font-medium lg:text-left">
+                <h3 class="text-2xl text-blue-950 font-medium lg:text-left">
                   Intelligent search
-                </h2>
+                </h3>
                 <p class="ms-8 me-8 text-blue-950 lg:text-left lg:ms-0 lg:me-0">
                   Our powerful search feature will help you find saved sites in
                   no time at all. No need to trawl through all of your
@@ -230,20 +262,22 @@
                   >More Info</a
                 >
               </div>
-            </div>
-            <div
+            </section>
+
+            <section
               role="tabpanel"
               id="panel-3"
               aria-labelledby="tab-3"
               hidden
+              tabindex="0"
               class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16"
             >
               <div class="relative h-96">
                 <div class="ms-8 me-8 pb-12 lg:pb-16 lg:ms-32">
                   <img
-                    class="relative z-1 w-full bg-top-right object-contain"
+                    class="relative z-10 w-full object-contain"
                     src="./images/illustration-features-tab-3.svg"
-                    alt="simple-bookmarking"
+                    alt="Easy sharing illustration"
                   />
                 </div>
                 <div
@@ -251,9 +285,9 @@
                 ></div>
               </div>
               <div class="flex flex-col self-center gap-8 text-center lg:me-32">
-                <h2 class="text-2xl text-blue-950 font-medium lg:text-left">
+                <h3 class="text-2xl text-blue-950 font-medium lg:text-left">
                   Share your bookmarks
-                </h2>
+                </h3>
                 <p class="ms-8 me-8 text-blue-950 lg:text-left lg:ms-0 lg:me-0">
                   Easily share your bookmarks and collections with others.
                   Create a shareable link that you can send at the click of a
@@ -265,7 +299,7 @@
                   >More Info</a
                 >
               </div>
-            </div>
+            </section>
           </div>
         </section>
         <section
